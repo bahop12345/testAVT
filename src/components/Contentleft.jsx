@@ -4,13 +4,12 @@ import Relate from "./Relate";
 
 const Contentleft = () => {
   const [newData, setNewData] = useState([]);
-
+  console.log(newData);
   useEffect(() => {
     const data = localStorage.getItem("dataNew");
     if (data) {
       const newDataArray = JSON.parse(data);
-      const dataSlice = newDataArray.slice(0, 4);
-      setNewData(dataSlice);
+      setNewData(newDataArray);
     }
   }, []);
 
@@ -23,14 +22,15 @@ const Contentleft = () => {
               <div key={`index${index}`} className="content_left">
                 <div>
                   <img
-                    src={item.imageUrl}
+                    src={item.urlToImage || ""}
                     alt="image"
                     className="content_left--img"
                   />
                 </div>
                 <h2 className="content_left_title">
-                  <Link to={`/articleDetail/${item.title}`}>{item.title}</Link>
+                  <Link to={`/details/${item.title}`}>{item.title}</Link>
                 </h2>
+                <p className="description">{item.description}</p>
               </div>
             );
           })}

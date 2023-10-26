@@ -73,6 +73,7 @@
 
 .content_title {
   cursor: pointer;
+
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -106,16 +107,25 @@
   flex: 1 0 100%;
 }
 .content_left {
+  width: 100%;
   flex: 1 0 25%;
 }
 
-.content_left_title {
-  font-size: 24px;
-  line-height: 28px;
+.content_left_title a {
+  font-size: 16px;
   margin-top: 20px;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none !important;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
+  -webkit-line-clamp: 3;
+  /* height: 65px; */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
+
 .content_left_title:hover {
   color: blue;
 }
@@ -126,14 +136,28 @@
 }
 
 .content_left--img {
+  width: 100%;
   height: 200px;
   object-fit: contain;
 }
-
+.description {
+  color: #cccc;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 18px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
+  -webkit-line-clamp: 4;
+  height: 85px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
 /* ----------------css admin--------------------- */
 .admin {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .contentImg {
   width: 100%;
@@ -144,8 +168,17 @@
   gap: 10px;
   margin-bottom: 20px;
 }
-.adminTitle {
+.adminTitle a {
+  font-size: 14px;
   text-decoration: none;
+  width: 550px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
+  -webkit-line-clamp: 2;
+  height: 50px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 .buttonAdmin {
   height: 40px !important;
@@ -194,9 +227,11 @@
 
 /* -------------relate---------------- */
 .relate {
+  width: 100%;
   display: flex;
   gap: 20px;
   border-bottom: 1px solid #0000;
+  margin-top: 30px;
 }
 
 .relate img {
@@ -205,12 +240,84 @@
   object-fit: cover;
   border-radius: 6px;
 }
-.relateTitle {
+.relateTitle a {
   font-size: 18px;
   line-height: 23px;
-  color: #292929 !important;
+  color: #2fa1b3 !important;
+  text-decoration: none;
 }
 
+/* -------------------------details------------------- */
+.article_detail {
+  margin-bottom: 50px;
+}
+.img_Details {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+.author_details {
+  display: flex;
+  justify-content: right;
+  margin-top: 5px;
+}
+.article_detail--title {
+  font-size: 35px;
+  line-height: 37px;
+  text-transform: capitalize;
+  color: #2fa1b3;
+}
+.article_detail--description {
+  font-size: 16px;
+  line-height: 25px;
+  text-transform: capitalize;
+  color: #292929;
+}
+.admin {
+  margin-top: 30px;
+}
+.manage {
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+}
+.buttonAdmin {
+  background: #2fa1b3;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---------------------manageImage_image---------------------- */
+.manageImage_image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+.manageImage_button {
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.manageImage_button {
+  display: flex !important;
+  justify-content: flex-start;
+}
+.manageImage_button {
+  margin-bottom: 15px;
+}
+.manage_Container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(8, 1fr);
+}
 @media (max-width: 768px) {
   .Side_imge {
     width: 50px;
@@ -225,5 +332,42 @@
   }
   .admin {
     padding-top: 20px;
+  }
+  .admin {
+    flex-direction: column;
+  }
+  .adminTitle {
+    width: 100%;
+  }
+  .adminTitle a {
+    width: 100%;
+  }
+  .manage {
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .contentImg {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .manageImage_button {
+    margin-bottom: 15px;
+  }
+  .manageImage_image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .relate {
+    display: none;
+    margin-bottom: 20px;
+  }
+  .description {
+    height: auto;
+    display: block;
+  }
+  .admin > div {
+    flex-direction: column;
   }
 }

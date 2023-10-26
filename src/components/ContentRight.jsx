@@ -4,13 +4,11 @@ import ContentRightBottom from "./ContentRightBottom";
 
 function ContentRight() {
   const [newData, setNewData] = useState([]);
-
   useEffect(() => {
     const data = localStorage.getItem("dataNew");
     if (data) {
       const newDataArray = JSON.parse(data);
-      const dataSlice = newDataArray.slice(0, 4);
-      setNewData(dataSlice);
+      setNewData(newDataArray);
     }
   }, []);
 
@@ -21,7 +19,11 @@ function ContentRight() {
           return (
             <div key={`index${index}`} className="content_right">
               <div>
-                <img src={item.imageUrl} alt="image" className="content_img" />
+                <img
+                  src={item.urlToImage}
+                  alt="image"
+                  className="content_img"
+                />
               </div>
               <h2 className="content_title">{item.title}</h2>
             </div>

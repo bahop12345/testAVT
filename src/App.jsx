@@ -7,6 +7,8 @@ import Admin from "./components/Admin";
 import ResultSearch from "./components/ResultSearch";
 import Menu from "./components/Menu";
 import { ToastContainer } from "react-toastify";
+import ManageImage from "./components/ManageImage";
+import ManageVideo from "./components/ManageVideo";
 
 function App() {
   return (
@@ -16,8 +18,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/articleDetail/:title" element={<ArticleDetail />} />
+        <Route path="/details/:title" element={<ArticleDetail />} />
         <Route path="/search" element={<ResultSearch />} />
+        <Route path="/admin/image" element={<ManageImage />} />
+        <Route path="/admin/video" element={<ManageVideo />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

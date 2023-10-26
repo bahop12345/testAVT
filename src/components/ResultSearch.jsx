@@ -12,9 +12,9 @@ const ResultSearch = () => {
         {searchResults?.length > 0 ? (
           searchResults?.map((item, index) => (
             <div key={index}>
-              <img src={item.imageUrl} alt="image" className="" />
+              <img src={item.urlToImage} alt="image" className="" />
               <h2 className="">
-                <Link to={`/articleDetail/${item.title}`}>{item.title}</Link>
+                <Link to={`/details/${item.title}`}>{item.title}</Link>
               </h2>
               <p>{item.content}</p>
             </div>
